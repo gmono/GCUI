@@ -1,0 +1,43 @@
+﻿
+画布->控件->框架
+控件不存储位置
+位置由上级控件保存
+
+基本的架构为：
+现已确定ui架构从上到下分别是 control surface paintdevice
+
+control是抽象的“控件”概念，也就是可以和人互动的部件
+surface是抽象的画布概念 也就是一块可以进行绘画的区域
+paintdevice 是抽象的绘图器概念，是一切绘制操作的基础
+
+不同层间是完全隔离的
+也就是说 control只知道surface的存在
+并且 control可以接收不同的surface surface对象如何构建 
+是否使用多个paintdevice 是否可以使用不同的paintdevice
+以及其如何实现 就与control无关
+
+surface其提供基本绘图函数 其任务为提供一块确定的区域用于显示内容
+并且保证其不越界
+
+paintdevice是最基本的绘图层  提供原始绘图函数 其可能与surface提供的有或没有区别
+它是底层绘图器 例如可以将canvas对象封装为一个paintdevice 并将其提供给surface
+
+surface可能通过某种方法实现只使用一个canvas 或者用多个canvas
+
+需要注意的是
+control并不限制其子类是否真正进行绘制
+例如某些特殊控件 例如输入框 就可以直接使用html中的标签实现
+但是根据原则 其尺寸不能越界
+
+
+采用这种方法 可以最大限度保证在统一编程模型上的可定制性和未来发展
+并且可以最大限度保证未来构建新项目时的代码复用性
+
+特殊类型的控件 frame 是顶层控件
+frame继承于control
+具体实现各异
+
+事件可以由外部事件引发
+称为外事件 外事件是由frame产生并分发的
+事件也可以由内部程序产生 内事件可以由某个控件的投递函数投递 逐层上行 一直到frame
+frame必须重写 throwevent函数 否则会出错
