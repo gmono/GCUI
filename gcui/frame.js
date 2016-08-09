@@ -17,6 +17,12 @@ var gcui;
             if (this.context == null)
                 throw new DOMException();
         }
+        frame.prototype.draw = function () {
+        };
+        frame.prototype.eventactive = function (event) {
+        };
+        frame.prototype.throwevent = function (event) {
+        };
         return frame;
     }(gcui.control));
 })(gcui || (gcui = {}));

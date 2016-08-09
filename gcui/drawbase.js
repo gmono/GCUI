@@ -63,5 +63,17 @@ var gcui;
         return rectx4;
     }());
     gcui.rectx4 = rectx4;
+    var twobsposes = (function () {
+        function twobsposes() {
+        }
+        return twobsposes;
+    }());
+    gcui.twobsposes = twobsposes;
+    var thsbsposes = (function () {
+        function thsbsposes() {
+        }
+        return thsbsposes;
+    }());
+    gcui.thsbsposes = thsbsposes;
 })(gcui || (gcui = {}));
 //# sourceMappingURL=drawbase.js.map

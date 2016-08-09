@@ -35,6 +35,7 @@
             for (var i = this.controls.length - 1; i <= 0; i++) {
                 var c = this.controls[i];
                 c.redraw();
+                
             }
         }
         //这是遮挡重绘函数 接收一个遮挡矩形 遮挡矩形的坐标系为此控件的坐标系

@@ -4,5 +4,6 @@
     export interface ISurface {
         size: size;
         //以下是函数部分
+
     }
 }

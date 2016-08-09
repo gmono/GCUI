@@ -58,4 +58,13 @@
             return ret;
         }
     }
+    export class twobsposes {
+        cp: position;
+        topos: position;
+    }
+    export class thsbsposes {
+        cp1: position;
+        cp2: position;
+        topos: position;
+    }
 }

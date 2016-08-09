@@ -12,6 +12,11 @@ namespace gcui {
             this.context = cxt.getContext("2d");
             if (this.context == null) throw new DOMException();
         }
-
+        draw() {
+        }
+        eventactive(event: IEvent) {
+        }
+        throwevent(event: IEvent) {
+        }
     }
 }
