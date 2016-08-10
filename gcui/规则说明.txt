@@ -38,6 +38,12 @@ frame继承于control
 具体实现各异
 
 事件可以由外部事件引发
-称为外事件 外事件是由frame产生并分发的
+称为外事件 外事件是由paintdevice产生 经由surface处理最后传递到frame后分发的
 事件也可以由内部程序产生 内事件可以由某个控件的投递函数投递 逐层上行 一直到frame
 frame必须重写 throwevent函数 否则会出错
+
+
+surface需要设置事件回调给device
+
+
+存在这样的约定 即device和surface的构造函数都没有参数

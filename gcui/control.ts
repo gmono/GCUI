@@ -7,8 +7,11 @@
         size: size;//控件的尺寸 和画布的尺寸一样 方便访问
 
         surface: ISurface;//此控件的画布
-        constructor(surface: ISurface) {
+        constructor() {
             this.controls = new Array<control>();
+
+        }
+        public setsurface(surface: ISurface) {
             this.size = surface.size;//方便访问
             this.surface = surface;
         }
@@ -41,19 +44,23 @@
         //这是遮挡重绘函数 接收一个遮挡矩形 遮挡矩形的坐标系为此控件的坐标系
         //坐标系转换由此控件内部完成
         //子控件通过使用this调用父控件的getchildpos函数实现
+        //此函数为可选实现函数
         public blockdraw(block:rect) {
         }
         ///这是获取某堆叠位置的子控件在父控件坐标系中坐标的函数
-        public getchildpos(conid:number): position{
+        public getchildpos(conid: number): position{
+            return null;
         }
         //设置某堆叠位置的控件的坐标
         public setchildpos(conid:number) {
         }
         //从对象到堆叠id
-        public getchildindex(con: control):number {
+        public getchildindex(con: control): number {
+            return null;
         }
         //从堆叠id到对象 比如可以通过0 得到最上层的控件
-        public getchildofindex(index: number):control {
+        public getchildofindex(index: number): control {
+            return null;
         }
         //以下为控件堆叠位置修改函数
         //注意 子控件采用栈式存储 所有索引从小到大 即对的上顺序从上到下

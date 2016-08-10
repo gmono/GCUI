@@ -1,8 +1,8 @@
 var gcui;
 (function (gcui) {
     (function (EventType) {
-        EventType[EventType["KeyButtonPress"] = 0] = "KeyButtonPress";
-        EventType[EventType["KeyButtonRelease"] = 1] = "KeyButtonRelease";
+        EventType[EventType["KeyButtonPress"] = 5] = "KeyButtonPress";
+        EventType[EventType["KeyButtonRelease"] = 6] = "KeyButtonRelease";
     })(gcui.EventType || (gcui.EventType = {}));
     var EventType = gcui.EventType;
     var KeyEvent = (function () {

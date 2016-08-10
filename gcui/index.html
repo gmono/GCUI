@@ -2,17 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>hello world</title>
 	<meta charset="utf-8" />
+    <script type="text/javascript" src="canvasdevice.js">
+    </script>
+    <script type="text/javascript" src="defaultsurface.js"></script>
+    <script type="text/javascript" src="drawbase.js">
+
+    </script>
+        <script type="text/javascript" src="paintbase.js">
+
+    </script>
+        <script type="text/javascript" src="/defcontrols/defaultcontrol.js">
+
+    </script>
+        <script type="text/javascript" src="/defcontrols/label.js">
+
+    </script>
 </head>
 <body>
-    <canvas height="1000px" width="1000px" id="can"></canvas>
+    <div id="t"></div>
 <script>
-    var v=document.getElementById("can");
-    var cxt = v.getContext("2d");
-    cxt.fillStyle = "#ddffcc";
-    cxt.fillRect(1, 2, 300, 400);
-    cxt.to
+    var t = document.getElementById("t");
+    var l = new gcui.defaultconts.label();
+    l.join(t);
+    l.draw();
 </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ var gcui;
     var defaultframe = (function (_super) {
         __extends(defaultframe, _super);
         function defaultframe(sur) {
-            _super.call(this, this.fsurface);
+            _super.call(this);
         }
         defaultframe.prototype.draw = function () {
         };
@@ -22,5 +22,6 @@ var gcui;
         };
         return defaultframe;
     }(gcui.control));
+    gcui.defaultframe = defaultframe;
 })(gcui || (gcui = {}));
-//# sourceMappingURL=frame.js.map
+//# sourceMappingURL=defaultframe.js.map
